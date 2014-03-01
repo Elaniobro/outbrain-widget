@@ -1,13 +1,13 @@
 <html>
 <head>
-  <title>outbrain</title>
+  <title>Outbrain | Widget</title>
   <style>
     h1{font-size: 22px; font-family: Helvetica;}
     ul{padding:0;}
     li{display:inline-block; width: 120px;vertical-align: top;}
     li a:link{text-decoration: none;}
     li img{height: 116px; width: 116px;}
-    h3{margin:0; font-size: 13px; font-family: Helvetica;color: #000;}
+    h3{margin:7px 0 0 0; font-size: 13px; font-family: Helvetica;color: #000;}
     li p{font-size: 12px; color: #000; line-height: 16px}
     div#ob-widget{width: 900px}
   </style>
@@ -17,7 +17,7 @@
 
   <div id="ob-widget">
     <div class="ob">
-      <h1>Recommended Links</h1>
+      <h1>You Might Also Like</h1>
       <ul></ul>
     </div>
 
@@ -25,8 +25,13 @@
       {{#.}}
       <li>
         <a class="link" data-link="{{orig_url}}" href="#">
-        <h3>{{source_name}}</h3>
+        {{#thumbnail}}
         <img src="{{thumbnail.url}}" title="{{content}}" height="{{thumbnail.height}}" width="{{thumbnail.width}}"/>
+        {{/thumbnail}}
+        {{^thumbnail}}
+         <!-- no thumbnail -->
+        {{/thumbnail}}
+        <h3>{{source_name}}</h3>
         <p>{{content}}</p>
         </a>
       </li>
