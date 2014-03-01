@@ -47,14 +47,17 @@
 
       // Create Obj with links
       var obLinks = document.querySelectorAll('a.link');
-      // itterate over the obLinks obj to bind click event.
-      console.log(typeof obLinks.length);
+
+      // Itterate over the obLinks obj to bind click event.
       for (link in obLinks){
-        if( typeof link === 'number'){
+
+        // Type Check
+        if( typeof obLinks[link] === 'number'){
           break;
         }
-        obLinks[link].addEventListener("click", function relatedLinks(){
 
+        // Binding click event
+        obLinks[link].addEventListener("click", function relatedLinks(){
           iFrameURL = this.getAttribute('data-link'); // Reset the iFrameURL var
           document.querySelector('#obIframe').src = iFrameURL; // Reset the iframe src to the iFrameURL var
           jsonP(); // Call the JSON(P) function.
