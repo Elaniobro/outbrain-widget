@@ -1,0 +1,43 @@
+<html>
+<head>
+  <title>outbrain</title>
+  <style>
+    h1{font-size: 22px; font-family: Helvetica;}
+    ul{padding:0;}
+    li{display:inline-block; width: 120px;vertical-align: top;}
+    li a:link{text-decoration: none;}
+    li img{height: 116px; width: 116px;}
+    h3{margin:0; font-size: 13px; font-family: Helvetica;color: #000;}
+    li p{font-size: 12px; color: #000; line-height: 16px}
+    div#ob-widget{width: 900px}
+  </style>
+</head>
+
+<body>
+
+  <div id="ob-widget">
+    <div class="ob">
+      <h1>Recommended Links</h1>
+      <ul></ul>
+    </div>
+
+    <script id="ob-template" type="text/x-mustache">
+      {{#.}}
+      <li>
+        <a class="link" data-link="{{orig_url}}" href="#">
+        <h3>{{source_name}}</h3>
+        <img src="{{thumbnail.url}}" title="{{content}}" height="{{thumbnail.height}}" width="{{thumbnail.width}}"/>
+        <p>{{content}}</p>
+        </a>
+      </li>
+      {{/.}}
+    </script>
+
+  </div>
+  <iframe id="obIframe" src="http://www.fastcodesign.com/3025995/infographic-of-the-
+day/infographic-the-periodic-table-of-storytelling" width="900" height="1000"></iframe>
+  <script type="text/javascript" src="js/mustache.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+
+</body>
+</html>
