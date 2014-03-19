@@ -46,7 +46,7 @@
       }
 
       // Create Obj with links
-      var obLinks = document.querySelectorAll('a.link');
+      var obLinks = document.querySelectorAll('#ob-widget a.link');
 
       // Itterate over the obLinks obj to bind click event.
       for (link in obLinks){
